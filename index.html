@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kimetsu Colorir — PDF de colorir estilo bobiegoods | Demon Slayer</title>
+<meta name="description" content="PDF digital para imprimir e colorir com 13 personagens de Kimetsu no Yaiba em estilo bobiegoods. Entrega imediata por e-mail. De R$39 por R$19,90.">
+<meta name="theme-color" content="#2B5C4F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23C22A2A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F2E7;
+    --paper-alt:#EFE7D3;
+    --paper-card:#FFFDF7;
+    --ink:#221F1D;
+    --ink-soft:#4A4441;
+    --haori:#2B5C4F;
+    --haori-dark:#1B3B33;
+    --haori-tint:#E4ECE7;
+    --nichirin:#C22A2A;
+    --nichirin-dark:#8F1E1E;
+    --zenitsu:#EFAE2E;
+    --mist:#DCD3BE;
+    --shadow: 0 18px 40px -20px rgba(34,31,29,0.35);
+    --radius: 22px;
+    --container: 1180px;
+    --ff-display: 'Reggae One', 'Hiragino Sans', sans-serif;
+    --ff-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --ff-mono: 'Space Mono', ui-monospace, monospace;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--ff-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:var(--ff-display); font-weight:400; line-height:1.08; margin:0; letter-spacing:0.2px; }
+  p{ margin:0; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family:inherit; }
+
+  :focus-visible{ outline:3px solid var(--nichirin); outline-offset:3px; border-radius:6px; }
+
+  .wrap{ max-width:var(--container); margin-inline:auto; padding-inline:22px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--ff-mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--haori-dark); font-weight:700;
+  }
+  .eyebrow::before{ content:''; width:18px; height:2px; background:var(--nichirin); display:inline-block; }
+
+  section{ position:relative; }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); transition-delay:calc(var(--d,0) * 70ms); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ================= TOP BAR ================= */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 18px;
+    background:rgba(247,242,231,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transform:translateY(-100%);
+    transition:transform .45s cubic-bezier(.2,.8,.3,1), border-color .3s ease;
+  }
+  .topbar.show{ transform:translateY(0); border-color:var(--mist); }
+  .topbar-logo{ display:flex; align-items:center; gap:8px; font-family:var(--ff-display); font-size:16px; color:var(--haori-dark); }
+  .topbar-logo .dot{ width:9px; height:9px; border-radius:50%; background:var(--nichirin); }
+  .topbar-cta{
+    font-family:var(--ff-mono); font-weight:700; font-size:12.5px;
+    background:var(--nichirin); color:#fff; padding:10px 16px; border-radius:999px;
+    text-decoration:none; white-space:nowrap;
+    box-shadow:0 8px 18px -8px rgba(194,42,42,0.6);
+  }
+
+  /* ================= HERO ================= */
+  .hero{ padding:86px 0 40px; overflow:hidden; }
+  .hero-inner{ display:flex; flex-direction:column; gap:28px; }
+  .hero-copy{ text-align:center; }
+  .hero-copy .eyebrow{ justify-content:center; margin-bottom:16px; }
+  .hero h1{
+    font-size:clamp(2.15rem, 8vw, 3.6rem);
+    color:var(--ink);
+  }
+  .hero h1 mark{
+    background:transparent; color:var(--haori-dark); position:relative; padding:0 4px;
+  }
+  .hero h1 mark svg{ position:absolute; left:-4px; right:-4px; bottom:-6px; width:calc(100% + 8px); height:16px; }
+  .hero h1 mark path{ stroke:var(--zenitsu); stroke-width:10; fill:none; stroke-linecap:round; }
+
+  .hero-sub{
+    margin:18px auto 0; max-width:520px; font-size:clamp(1rem,3.6vw,1.15rem); color:var(--ink-soft);
+  }
+  .hero-actions{ margin-top:26px; display:flex; flex-direction:column; align-items:center; gap:12px; }
+
+  .stamp-btn{
+    --size:1;
+    position:relative;
+    display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:2px;
+    font-family:var(--ff-mono); font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
+    text-decoration:none;
+    color:#fff8ee;
+    background:var(--nichirin);
+    padding:20px 34px;
+    border-radius:52% 48% 55% 45% / 48% 52% 48% 52%;
+    box-shadow:0 16px 30px -12px rgba(194,42,42,0.65), inset 0 0 0 2px rgba(255,255,255,0.18);
+    transform:rotate(-2deg);
+    transition:transform .25s cubic-bezier(.3,1.4,.5,1), box-shadow .25s ease;
+    text-align:center;
+    font-size:15px;
+  }
+  .stamp-btn small{ display:block; font-family:var(--ff-mono); font-size:11px; opacity:0.85; font-weight:400; margin-top:3px; }
+  .stamp-btn:hover{ transform:rotate(0deg) scale(1.05); box-shadow:0 20px 34px -12px rgba(194,42,42,0.75), inset 0 0 0 2px rgba(255,255,255,0.25); }
+  .stamp-btn:active{ transform:rotate(0deg) scale(0.96); }
+
+  .price-row{
+    display:flex; align-items:baseline; gap:10px; font-family:var(--ff-mono);
+  }
+  .price-old{ text-decoration:line-through; color:var(--ink-soft); font-size:13px; opacity:0.7; }
+  .price-new{ color:var(--nichirin-dark); font-weight:700; font-size:20px; }
+
+  .trust-row{
+    margin-top:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 18px;
+    font-family:var(--ff-mono); font-size:11.5px; color:var(--ink-soft); letter-spacing:0.02em;
+  }
+  .trust-row li{ display:flex; align-items:center; gap:6px; }
+  .trust-row li::before{ content:'✓'; color:var(--haori); font-weight:700; }
+
+  .hero-art{ position:relative; display:flex; justify-content:center; padding-top:6px; }
+  .hero-art .card{
+    width:min(360px, 82vw);
+    background:var(--paper-card);
+    border-radius:16px;
+    padding:10px;
+    box-shadow:var(--shadow);
+    transform:rotate(3deg);
+    position:relative;
+    z-index:2;
+  }
+  .hero-art .card img{ border-radius:8px; width:100%; height:auto; aspect-ratio:900/636; object-fit:cover; }
+  .hero-art .tape{
+    position:absolute; width:64px; height:26px; background:rgba(239,174,46,0.85);
+    top:-12px; left:22px; transform:rotate(-8deg); box-shadow:0 4px 8px rgba(0,0,0,0.12);
+  }
+  .hero-scribble{ position:absolute; width:220px; height:220px; right:-20px; bottom:-30px; z-index:1; opacity:0.9; }
+  .hero-scribble path{ fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .hero-scribble .s1{ stroke:var(--haori); stroke-width:7; }
+  .hero-scribble .s2{ stroke:var(--nichirin); stroke-width:7; }
+  .hero-scribble .s3{ stroke:var(--zenitsu); stroke-width:7; }
+
+  @media (min-width:900px){
+    .hero-inner{ flex-direction:row; align-items:center; text-align:left; gap:50px; }
+    .hero-copy{ text-align:left; flex:1; }
+    .hero-copy .eyebrow{ justify-content:flex-start; }
+    .hero-sub{ margin-left:0; }
+    .hero-actions{ align-items:flex-start; }
+    .hero-art{ flex:0 0 420px; }
+  }
+
+  /* ================= MARQUEE ================= */
+  .marquee{
+    background:var(--haori-dark); color:var(--paper);
+    padding:16px 0; overflow:hidden; transform:rotate(-1.4deg) scale(1.03);
+    margin-block:44px;
+    border-top:2px solid var(--haori); border-bottom:2px solid var(--haori);
+  }
+  .marquee-track{
+    display:flex; width:max-content; gap:40px;
+    animation:scroll-left 32s linear infinite;
+  }
+  .marquee span{
+    font-family:var(--ff-display); font-size:clamp(1.1rem,4vw,1.6rem); white-space:nowrap; display:flex; align-items:center; gap:40px;
+  }
+  .marquee span em{ font-style:normal; color:var(--zenitsu); }
+  @keyframes scroll-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ================= AGITATION ================= */
+  .agitate{ padding:20px 0 56px; }
+  .agitate .wrap{ max-width:760px; }
+  .agitate h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; }
+  .agitate p{ margin-top:18px; color:var(--ink-soft); font-size:1.02rem; }
+  .agitate p + p{ margin-top:12px; }
+  .agitate strong{ color:var(--ink); }
+  .agitate-photo{
+    margin:28px 0 0; position:relative; background:var(--paper-card); border-radius:18px; padding:10px;
+    box-shadow:var(--shadow); transform:rotate(-1.2deg);
+  }
+  .agitate-photo img{ width:100%; height:auto; border-radius:10px; aspect-ratio:1200/675; object-fit:cover; }
+  .agitate-photo .tape{
+    position:absolute; width:60px; height:24px; background:rgba(43,92,79,0.85);
+    top:-10px; right:26px; transform:rotate(6deg); box-shadow:0 4px 8px rgba(0,0,0,0.12);
+  }
+  .agitate-photo figcaption{
+    font-family:var(--ff-mono); font-size:11.5px; color:var(--ink-soft); text-align:center;
+    padding:12px 10px 4px;
+  }
+
+  /* ================= GALLERY ================= */
+  .gallery{ padding:24px 0 60px; background:var(--paper-alt); }
+  .gallery-head{ padding-bottom:22px; }
+  .gallery-head h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; max-width:560px; }
+  .gallery-head p{ margin-top:12px; color:var(--ink-soft); max-width:480px; }
+
+  .gallery-track{
+    display:flex; gap:16px; overflow-x:auto; padding:8px 22px 22px; scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .gallery-track::-webkit-scrollbar{ display:none; }
+  .gcard{
+    flex:0 0 82%; scroll-snap-align:center; background:var(--paper-card); border-radius:18px;
+    padding:12px; box-shadow:0 14px 30px -18px rgba(34,31,29,0.4);
+    transition:transform .35s cubic-bezier(.2,.8,.3,1);
+  }
+  .gcard:active{ transform:scale(0.97); }
+  .gcard .img-wrap{ position:relative; border-radius:10px; overflow:hidden; aspect-ratio:900/636; background:var(--haori-tint); }
+  .gcard img{ width:100%; height:100%; object-fit:cover; }
+  .gcard-tag{
+    position:absolute; top:8px; left:8px; background:rgba(43,92,79,0.92); color:#fff;
+    font-family:var(--ff-mono); font-size:10.5px; padding:4px 8px; border-radius:999px; letter-spacing:0.03em;
+  }
+  .gcard-name{ margin-top:10px; font-family:var(--ff-display); font-size:1.05rem; color:var(--haori-dark); }
+  .gcard-style{ font-family:var(--ff-mono); font-size:11.5px; color:var(--ink-soft); margin-top:2px; }
+
+  .gcard-lock .img-wrap{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    border:2px dashed var(--haori); background:
+      repeating-linear-gradient(45deg, var(--haori-tint), var(--haori-tint) 10px, var(--paper-card) 10px, var(--paper-card) 20px);
+  }
+  .gcard-lock .lock-icon{ font-size:2.2rem; }
+  .gcard-lock .lock-count{ font-family:var(--ff-mono); font-weight:700; color:var(--haori-dark); font-size:13px; background:var(--paper-card); padding:4px 10px; border-radius:999px; }
+  .gcard-lock .gcard-name{ color:var(--nichirin-dark); }
+
+  .gallery-hint{ text-align:center; font-family:var(--ff-mono); font-size:11.5px; color:var(--ink-soft); margin-top:-6px; padding-bottom:4px; }
+  .gallery-hint span{ display:inline-flex; align-items:center; gap:6px; }
+
+  @media (min-width:900px){
+    .gallery-track{ display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; padding:8px 0 0; }
+    .gcard{ transform:none; }
+    .gcard:hover{ transform:translateY(-8px) rotate(-1deg); }
+    .gallery-hint{ display:none; }
+  }
+
+  /* ================= BENEFITS ================= */
+  .benefits{ padding:60px 0; }
+  .benefits-head h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; max-width:520px; }
+  .benefit-list{ margin-top:30px; display:grid; gap:14px; }
+  .benefit{
+    display:flex; gap:16px; align-items:flex-start; background:var(--paper-card);
+    border:1.5px dashed var(--mist); border-radius:16px; padding:18px 18px;
+  }
+  .benefit-icon{
+    flex:0 0 auto; width:42px; height:42px; border-radius:50%; background:var(--haori-tint);
+    display:flex; align-items:center; justify-content:center; font-size:19px;
+  }
+  .benefit h3{ font-family:var(--ff-body); font-weight:700; font-size:1rem; color:var(--ink); }
+  .benefit p{ margin-top:4px; color:var(--ink-soft); font-size:0.93rem; }
+
+  @media (min-width:760px){ .benefit-list{ grid-template-columns:1fr 1fr; } }
+
+  /* ================= STEPS ================= */
+  .steps{ padding:60px 0; background:var(--haori-dark); color:var(--paper); position:relative; overflow:hidden; }
+  .steps::before{
+    content:''; position:absolute; inset:0; opacity:0.07;
+    background-image:
+      linear-gradient(45deg, var(--paper) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--paper) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--paper) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--paper) 75%);
+    background-size:46px 46px; background-position:0 0, 0 23px, 23px -23px, -23px 0;
+  }
+  .steps .wrap{ position:relative; }
+  .steps .eyebrow{ color:var(--zenitsu); }
+  .steps .eyebrow::before{ background:var(--zenitsu); }
+  .steps h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; max-width:480px; }
+  .step-list{ margin-top:32px; display:grid; gap:22px; }
+  .step{ display:flex; gap:18px; align-items:flex-start; }
+  .step-num{
+    font-family:var(--ff-mono); font-size:13px; font-weight:700; color:var(--haori-dark);
+    background:var(--zenitsu); width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  }
+  .step h3{ font-family:var(--ff-body); font-weight:700; font-size:1.05rem; }
+  .step p{ margin-top:5px; color:#D8D0C0; font-size:0.94rem; max-width:440px; }
+  @media (min-width:760px){ .step-list{ grid-template-columns:repeat(3,1fr); } .step{ flex-direction:column; } }
+
+  /* ================= FIT / QUALIFY ================= */
+  .fit{ padding:60px 0; }
+  .fit-head h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; max-width:540px; }
+  .fit-list{ margin-top:26px; display:grid; gap:12px; }
+  .fit-item{
+    display:flex; gap:12px; align-items:center; background:var(--paper-card); border-radius:14px;
+    padding:14px 16px; box-shadow:0 10px 22px -18px rgba(34,31,29,0.5);
+    font-size:0.98rem;
+  }
+  .fit-item .check{
+    flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--nichirin); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700;
+  }
+  @media (min-width:760px){ .fit-list{ grid-template-columns:1fr 1fr; } }
+
+  /* ================= FAQ ================= */
+  .faq{ padding:60px 0 70px; background:var(--paper-alt); }
+  .faq-head h2{ font-size:clamp(1.6rem,5.4vw,2.3rem); margin-top:14px; }
+  .faq-list{ margin-top:26px; max-width:720px; display:grid; gap:10px; }
+  .faq-item{
+    background:var(--paper-card); border-radius:14px; padding:4px 18px; border:1px solid var(--mist);
+  }
+  .faq-item summary{
+    cursor:pointer; list-style:none; padding:16px 0; display:flex; justify-content:space-between; gap:14px;
+    align-items:center; font-weight:700; font-size:0.98rem;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary .plus{
+    flex:0 0 auto; font-family:var(--ff-mono); font-size:18px; color:var(--nichirin); transition:transform .3s ease;
+  }
+  .faq-item[open] summary .plus{ transform:rotate(45deg); }
+  .faq-item p{ padding-bottom:16px; color:var(--ink-soft); font-size:0.94rem; }
+
+  /* ================= FINAL CTA ================= */
+  .final{ padding:70px 0 60px; text-align:center; position:relative; }
+  .final h2{ font-size:clamp(1.9rem,7vw,2.8rem); max-width:640px; margin-inline:auto; }
+  .final p{ margin-top:14px; color:var(--ink-soft); max-width:440px; margin-inline:auto; }
+  .final .hero-actions{ margin-top:28px; }
+
+  /* ================= FOOTER ================= */
+  footer{ padding:34px 0 40px; border-top:1px solid var(--mist); }
+  .foot-inner{ display:flex; flex-direction:column; gap:14px; text-align:center; }
+  .foot-logo{ font-family:var(--ff-display); font-size:1.1rem; color:var(--haori-dark); }
+  .foot-note{ font-family:var(--ff-mono); font-size:11px; color:var(--ink-soft); line-height:1.7; max-width:560px; margin-inline:auto; }
+  @media (min-width:760px){ .foot-inner{ flex-direction:row; justify-content:space-between; text-align:left; } .foot-note{ margin-inline:0; text-align:right; } }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <div class="topbar-logo"><span class="dot"></span>Kimetsu Colorir</div>
+  <a class="topbar-cta" href="https://pay.cakto.com.br/qf863du_951346">Quero o PDF · R$19,90</a>
+</div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">PDF digital · estilo bobiegoods</span>
+        <h1>Coloque a cor que seu Hashira <mark>favorito<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 40 2, 80 14, 100 8 S 160 2, 198 9"/></svg></mark> nunca teve</h1>
+        <p class="hero-sub">13 personagens de Kimetsu no Yaiba em cenas fofas e cheias de detalhe, estilo bobiegoods, prontos pra você imprimir e colorir quantas vezes quiser.</p>
+        <div class="hero-actions">
+          <a class="stamp-btn" href="https://pay.cakto.com.br/qf863du_951346">
+            Quero colorir agora
+            <small>acesso imediato</small>
+          </a>
+          <div class="price-row">
+            <span class="price-old">de R$39,00</span>
+            <span class="price-new">por R$19,90</span>
+          </div>
+        </div>
+        <ul class="trust-row">
+          <li>Recebe no seu e-mail</li>
+          <li>Impressão ilimitada</li>
+          <li>Alta resolução p/ A4</li>
+        </ul>
+      </div>
+
+      <div class="hero-art">
+        <div class="card">
+          <div class="tape"></div>
+          <img src="img/tanjiro.webp" alt="Página para colorir de Tanjiro Kamado em cena de jardim japonês, estilo bobiegoods" width="900" height="636">
+        </div>
+        <svg class="hero-scribble" viewBox="0 0 220 220" aria-hidden="true">
+          <path class="s1 draw" d="M10 40 C 60 10, 90 70, 140 40 S 200 10, 210 60"/>
+          <path class="s2 draw" d="M20 90 C 70 60, 100 120, 150 90 S 205 60, 215 110"/>
+          <path class="s3 draw" d="M15 140 C 65 110, 95 170, 145 140 S 200 115, 210 160"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>Tanjiro <em>·</em> Nezuko <em>·</em> Zenitsu <em>·</em> Inosuke <em>·</em> Shinobu <em>·</em> Giyu <em>·</em> Rengoku <em>·</em> Mitsuri <em>·</em> Muichiro <em>·</em> Sanemi <em>·</em> Gyomei <em>·</em> Obanai <em>·</em> Kanao</span>
+    </div>
+  </div>
+
+  <!-- ===================== AGITATION ===================== -->
+  <section class="agitate">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="--d:0">Pra quem ama Demon Slayer</span>
+      <h2 class="reveal" style="--d:1">Fanart bonita você já salvou centenas. Uma pra imprimir e colorir de verdade, quase nenhuma.</h2>
+      <p class="reveal" style="--d:2">O feed tá cheio de fanart do Tanjiro, da Nezuko, dos Hashira — mas na hora de <strong>imprimir e colorir</strong>, a maioria é baixa resolução, mal traçada ou nem existe em PT-BR.</p>
+      <p class="reveal" style="--d:3">O <strong>Kimetsu Colorir</strong> é um PDF feito pra isso: linhas limpas, cenas cheias de detalhe no estilo bobiegoods que você já ama no Pinterest e no TikTok, prontas pra sair da tela e virar arte de verdade — no seu caderno, na sua parede, no seu tempo de colorir e desestressar.</p>
+      <figure class="agitate-photo reveal" style="--d:4">
+        <div class="tape"></div>
+        <img src="img/momento-colorir.webp" alt="Tanjiro, Zenitsu, Nezuko e Inosuke deitados no chão, coloridos, desenhando juntos" width="1200" height="675" loading="lazy">
+        <figcaption>Um momento sem tela — só o personagem favorito, o lápis de cor e você.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="gallery">
+    <div class="wrap gallery-head">
+      <span class="eyebrow reveal" style="--d:0">Uma prévia do pdf</span>
+      <h2 class="reveal" style="--d:1">13 personagens, 14 cenas pra colorir</h2>
+      <p class="reveal" style="--d:2">Aqui vão 5 pra você ter um gostinho — as outras 8 cenas ficam de surpresa até você abrir o PDF.</p>
+    </div>
+    <div class="gallery-track" id="galleryTrack"></div>
+    <p class="gallery-hint"><span>← arraste pro lado pra ver mais →</span></p>
+  </section>
+
+  <!-- ===================== BENEFITS ===================== -->
+  <section class="benefits">
+    <div class="wrap">
+      <div class="benefits-head">
+        <span class="eyebrow reveal" style="--d:0">O que você recebe</span>
+        <h2 class="reveal" style="--d:1">Um PDF pensado pra ser impresso, não só olhado</h2>
+      </div>
+      <div class="benefit-list">
+        <div class="benefit reveal" style="--d:0">
+          <div class="benefit-icon">🖌️</div>
+          <div><h3>14 ilustrações exclusivas</h3><p>Cenas completas dos personagens principais e dos Pilares, no estilo bobiegoods.</p></div>
+        </div>
+        <div class="benefit reveal" style="--d:1">
+          <div class="benefit-icon">🖨️</div>
+          <div><h3>Alta resolução para A4</h3><p>Traço limpo e nítido mesmo impresso em folha grande, sem serrilhado.</p></div>
+        </div>
+        <div class="benefit reveal" style="--d:2">
+          <div class="benefit-icon">♾️</div>
+          <div><h3>Impressão ilimitada</h3><p>É seu pra sempre: imprima quantas vezes quiser, pra você ou pra presentear.</p></div>
+        </div>
+        <div class="benefit reveal" style="--d:3">
+          <div class="benefit-icon">📩</div>
+          <div><h3>Entrega direto no seu e-mail</h3><p>Assim que o pagamento é aprovado, o link do PDF já chega na sua caixa de entrada.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STEPS ===================== -->
+  <section class="steps">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="--d:0">Como funciona</span>
+      <h2 class="reveal" style="--d:1">Da compra à primeira página colorida</h2>
+      <div class="step-list">
+        <div class="step reveal" style="--d:0">
+          <span class="step-num">01</span>
+          <div><h3>Compre com segurança</h3><p>Pagamento processado pela Cakto, em poucos cliques.</p></div>
+        </div>
+        <div class="step reveal" style="--d:1">
+          <span class="step-num">02</span>
+          <div><h3>Receba o link no seu e-mail</h3><p>O PDF chega certinho na caixa de entrada, pronto pra baixar.</p></div>
+        </div>
+        <div class="step reveal" style="--d:2">
+          <span class="step-num">03</span>
+          <div><h3>Imprima e comece a colorir</h3><p>Papel, lápis de cor na mão — é só escolher o primeiro personagem.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FIT ===================== -->
+  <section class="fit">
+    <div class="wrap">
+      <div class="fit-head">
+        <span class="eyebrow reveal" style="--d:0">É pra você se...</span>
+        <h2 class="reveal" style="--d:1">Esse PDF foi feito pra quem</h2>
+      </div>
+      <div class="fit-list">
+        <div class="fit-item reveal" style="--d:0"><span class="check">✓</span>Ama Kimetsu no Yaiba e tem um Pilar favorito</div>
+        <div class="fit-item reveal" style="--d:1"><span class="check">✓</span>Curte colorir pra relaxar e desligar da tela</div>
+        <div class="fit-item reveal" style="--d:2"><span class="check">✓</span>Segue contas de coloring pages no Pinterest/TikTok</div>
+        <div class="fit-item reveal" style="--d:3"><span class="check">✓</span>Quer decorar caderno, agenda ou quarto com arte própria</div>
+        <div class="fit-item reveal" style="--d:4"><span class="check">✓</span>Busca um presente fofo e barato pra outro fã de anime</div>
+        <div class="fit-item reveal" style="--d:5"><span class="check">✓</span>Prefere uma pausa criativa a mais um scroll infinito</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="faq-head">
+        <span class="eyebrow reveal" style="--d:0">Dúvidas</span>
+        <h2 class="reveal" style="--d:1">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal" style="--d:0">
+          <summary>O produto é físico ou digital?<span class="plus">+</span></summary>
+          <p>100% digital. Você não recebe nada pelo correio — o PDF chega em um link de download direto no seu e-mail.</p>
+        </details>
+        <details class="faq-item reveal" style="--d:1">
+          <summary>Em que tamanho posso imprimir?<span class="plus">+</span></summary>
+          <p>As páginas são otimizadas para papel A4, mas imprimem bem em Carta (Letter) também.</p>
+        </details>
+        <details class="faq-item reveal" style="--d:2">
+          <summary>Posso imprimir quantas vezes eu quiser?<span class="plus">+</span></summary>
+          <p>Sim. A compra é única e o arquivo é seu — imprima quantas cópias quiser para uso pessoal.</p>
+        </details>
+        <details class="faq-item reveal" style="--d:3">
+          <summary>Como recebo o acesso depois de comprar?<span class="plus">+</span></summary>
+          <p>Assim que o pagamento é aprovado, você recebe um e-mail com o link de download do PDF. Se não achar, dá uma olhada na caixa de spam/promoções.</p>
+        </details>
+        <details class="faq-item reveal" style="--d:4">
+          <summary>Preciso de algum programa especial pra abrir?<span class="plus">+</span></summary>
+          <p>Não. É um PDF comum — abre em qualquer celular, computador ou tablet.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="--d:0; justify-content:center">Sua primeira página, hoje</span>
+      <h2 class="reveal" style="--d:1">Escolha seu personagem, pegue o lápis de cor e solte a criatividade</h2>
+      <p class="reveal" style="--d:2">Leva menos de 2 minutos: compra, acesso liberado, arquivo na mão.</p>
+      <div class="hero-actions reveal" style="--d:3">
+        <a class="stamp-btn" href="https://pay.cakto.com.br/qf863du_951346">
+          Quero colorir agora
+          <small>de R$39,00 por R$19,90</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-logo">Kimetsu Colorir</div>
+    <p class="foot-note">Produto de fã, sem afiliação oficial com Kimetsu no Yaiba / Koyoharu Gotouge / Shueisha / Aniplex.<br>Produto digital — sem envio físico. Compra processada com segurança pela Cakto.</p>
+  </div>
+</footer>
+
+<script>
+  // sticky topbar
+  const topbar = document.getElementById('topbar');
+  const hero = document.querySelector('.hero');
+  const topbarObserver = new IntersectionObserver(([entry]) => {
+    topbar.classList.toggle('show', !entry.isIntersecting);
+  }, { rootMargin: '-10% 0px 0px 0px' });
+  topbarObserver.observe(hero);
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // duplicate marquee content for seamless loop
+  const track = document.getElementById('marqueeTrack');
+  track.innerHTML += track.innerHTML;
+
+  // gallery data + build
+  const BASE = "img/";
+  const characters = [
+    { file: "tanjiro.webp", name: "Tanjiro Kamado", style: "Respiração da Água" },
+    { file: "nezuko.webp", name: "Nezuko Kamado", style: "Sangue Demoníaco" },
+    { file: "zenitsu.webp", name: "Zenitsu Agatsuma", style: "Respiração do Trovão" },
+    { file: "inosuke.webp", name: "Inosuke Hashibira", style: "Respiração da Fera" },
+    { file: "rengoku.webp", name: "Kyojuro Rengoku", style: "Pilar das Chamas" }
+  ];
+
+  const galleryTrack = document.getElementById('galleryTrack');
+  galleryTrack.innerHTML = characters.map(c => `
+    <article class="gcard">
+      <div class="img-wrap">
+        <span class="gcard-tag">pra colorir</span>
+        <img src="${BASE}${c.file}" alt="Página para colorir de ${c.name}, estilo bobiegoods" loading="lazy" width="900" height="636">
+      </div>
+      <p class="gcard-name">${c.name}</p>
+      <p class="gcard-style">${c.style}</p>
+    </article>
+  `).join('') + `
+    <article class="gcard gcard-lock">
+      <div class="img-wrap">
+        <span class="lock-icon">🔒</span>
+        <span class="lock-count">+8 personagens</span>
+      </div>
+      <p class="gcard-name">Muitos outros...</p>
+      <p class="gcard-style">Só no PDF completo</p>
+    </article>
+  `;
+</script>
+
+</body>
+</html>
